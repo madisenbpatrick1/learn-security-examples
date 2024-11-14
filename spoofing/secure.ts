@@ -26,8 +26,8 @@ app.use(
   session({
     secret: `${secret}`,
     cookie: {
-        httpOnly: true,
-        sameSite: true,
+        httpOnly: true, // this is a security risk, should always be true 
+        sameSite: true, // prevents cookie stealing and program injection
     },
     resave: false,
     saveUninitialized: false

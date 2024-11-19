@@ -34,10 +34,10 @@ app.use(bodyParser.json());
 
 // Session middleware
 app.use(session({
-  secret: 'your_secret_key',
+  secret: 'your_secret_key', // this should not be hardcoded 
   cookie: { httpOnly: true, sameSite: 'strict' }, // SameSite should be a string
   resave: false,
-  saveUninitialized: true,
+  saveUninitialized: true, // so this can not be overwritten, program inaccessible
 }));
 
 // Route to update user role (WITH SESSION AUTHENTICATION)
